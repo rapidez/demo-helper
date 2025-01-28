@@ -1,36 +1,21 @@
-# Rapidez :package_name_without_prefix
-<!--delete-->
-This repository can be used as template for a new Rapidez package.
+# Rapidez demo-helper
 
-- Click on "Use this template" on the top of this Github repo page
-- Run `php ./configure.php`
+This package contains some of the code used specifically for https://demo.rapidez.io
 
-Credits to [`spatie/package-skeleton-laravel`](https://github.com/spatie/package-skeleton-laravel) for the inpiration for this template.
-
-Keep in mind that if you contribute to this template; it should work for official and unofficial packages!
-- `rapidez/something`
-- `someone/rapidez-something`
-<!--/delete-->
-:package_description
+It includes a middleware that sets specific configuration values based on the user's session.
 
 ## Installation
 
 ```
-composer require :vendor_slug/:package_slug
-```
-
-## Configuration
-
-You can publish the config with:
-```
-php artisan vendor:publish --tag=rapidez-:package_slug_without_prefix-config
+composer config repositories.demo-helper vcs https://github.com/rapidez/demo-helper.git
+composer require rapidez/demo-helper
 ```
 
 ## Views
 
 You can publish the views with:
 ```
-php artisan vendor:publish --tag=rapidez-:package_slug_without_prefix-views
+php artisan vendor:publish --tag=rapidez-demo-helper-views
 ```
 
 ## License
