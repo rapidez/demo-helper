@@ -1,28 +1,33 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "rapidez/demo-helper",
+    "description": "This package contains some of the code used specifically for https://demo.rapidez.io",
     "keywords": [
         "rapidez",
-        ":package_slug"
+        "demo-helper"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://demo.rapidez.io",
     "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "indy koning",
+            "email": "indy@justbetter.nl",
             "role": "Developer"
         }
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^8.1|^8.2",
-        "rapidez/core": "^2.0|^3.0"
+        "php": "^8.1|^8.2|^8.3",
+        "rapidez/core": "^3.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.9",
+        "phpstan/phpstan": "^1.12",
+        "phpunit/phpunit": "^10.5.34|^11.3.5"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "Rapidez\\DemoHelper\\": "src"
         }
     },
     "config": {
@@ -31,8 +36,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Rapidez\\DemoHelper\\DemoHelperServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "analyse": "phpstan --memory-limit=256M"
     }
 }
