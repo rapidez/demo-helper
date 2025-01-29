@@ -28,9 +28,7 @@ class DemoHelperServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'rapidez-demo-helper');
 
-        if (! $this->app->runningInConsole()) {
-            View::startPush('head', view('rapidez-demo-helper::top-bar'));
-        }
+        View::composer('rapidez::layouts.app', fn($view) => $view->getFactory()->startPush('head', view('rapidez-demo-helper::top-bar')));
 
         return $this;
     }
