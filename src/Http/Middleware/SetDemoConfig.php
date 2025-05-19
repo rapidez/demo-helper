@@ -13,9 +13,9 @@ class SetDemoConfig
 
         if ($request->has('checkout')) {
             if ($request->get('checkout') === 'onestep') {
-                Arr::set($sessionConfig, 'rapidez.frontend.checkout_steps.default', ['onestep']);
+                Arr::set($sessionConfig, 'rapidez.frontend.checkout_steps', ['onestep']);
             } else {
-                Arr::forget($sessionConfig, 'rapidez.frontend.checkout_steps.default');
+                Arr::forget($sessionConfig, 'rapidez.frontend.checkout_steps');
             }
             $request->session()->put('config', $sessionConfig);
         }
